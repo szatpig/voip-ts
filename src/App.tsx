@@ -1,12 +1,18 @@
 import React from 'react';
-
-import { Button } from 'antd';
+import {
+    BrowserRouter as Router
+} from 'react-router-dom';
+import { Provider } from "mobx-react"
+import store from './store'
+import Pages from './pages'
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-        <Button type="primary">Button</Button>
-    </div>
+      <Provider {...store}>
+          <Router>
+              <Pages />
+          </Router>
+      </Provider>
   );
 }
 

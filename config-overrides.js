@@ -1,8 +1,8 @@
 // Created by szatpig at 2019/5/16.
 
-const { override, fixBabelImports,addWebpackAlias ,addLessLoader  } = require('customize-cra');
+const { override, fixBabelImports,addWebpackAlias ,addLessLoader,addDecoratorsLegacy } = require('customize-cra');
 
-const path = require('path')
+const path = require('path');
 
 module.exports = override(
     //配置路径别名
@@ -25,5 +25,6 @@ module.exports = override(
         strictMath: true,
         noIeCompat: true,
         localIdentName: '[local]--[hash:base64:5]' // if you use CSS Modules, and custom `localIdentName`, default is '[local]--[hash:base64:5]'.
-    })
+    }),
+    addDecoratorsLegacy()
 );
