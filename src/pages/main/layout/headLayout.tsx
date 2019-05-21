@@ -8,11 +8,14 @@ import defaultHeadImg from './../../../images/default.png'
 @inject('title')
 @observer
 class HeadLayout extends Component<Props, State>{
+    static defaultProps = {
+        title:{}
+    };
     state = {
         count:5
-    }
+    };
     render(){
-        const { title:{ collapsed ,toggle } } = this.props;
+        const { collapsed ,toggle } = this.props.title;
         const text = <span>Title</span>;
         const content = (
             <div>
@@ -57,7 +60,7 @@ class HeadLayout extends Component<Props, State>{
 }
 
 interface Props {
-    title:title
+    title:any
 }
 interface State {}
 

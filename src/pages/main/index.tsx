@@ -13,7 +13,9 @@ const { Header, Sider, Content } = Layout;
 @inject('title')
 @observer
 class MainContainer extends Component<Props, State> {
-    static defaultProps = {}
+    static defaultProps = {
+        title:{}
+    }
 
     componentDidMount() {
     }
@@ -25,7 +27,8 @@ class MainContainer extends Component<Props, State> {
     }
 
     render() {
-        const { title:{ collapsed  } } = this.props;
+        const { collapsed } = this.props.title;
+        console.log(collapsed);
         return (
             <Layout className="main-container">
                 <Sider width={180}
@@ -46,7 +49,7 @@ class MainContainer extends Component<Props, State> {
 }
 
 interface Props {
-    title:title
+    title:any
 }
 interface State {}
 

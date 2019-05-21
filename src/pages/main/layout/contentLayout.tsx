@@ -5,7 +5,6 @@ import { Route } from 'react-router-dom'
 import routes from './../../../router'
 
 class ContentLayout extends Component<Props, State> {
-
     render() {
         return (
             <div>

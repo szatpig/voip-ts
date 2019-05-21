@@ -4,16 +4,12 @@ import { Menu,Icon } from 'antd';
 
 const { SubMenu } = Menu;
 
-export default class MenuLayout extends Component{
-    // state = {
-    //     collapsed : this.props.collapsed
-    // }
+class MenuLayout extends Component<Props, State>{
     render(){
-        console.log('MenuLayout',this.props);
         const { collapsed } = this.props;
         return(
             <div className="menu-container">
-                <div className={`logo-wrap ${ collapsed ?  'active': '' }`} >小意机器人</div>
+                <div className={`logo-wrap ${ collapsed ?  'active': '' }`} >voip运维平台</div>
                 <Menu theme="dark" mode="inline">
                     <Menu.Item>
                         <Icon type="home" theme="filled" />
@@ -31,3 +27,10 @@ export default class MenuLayout extends Component{
         )
     }
 }
+
+interface Props {
+    collapsed:Boolean
+}
+interface State {}
+
+export default MenuLayout
