@@ -86,8 +86,16 @@
             font-size: 18px;
             overflow: hidden;
         }
+        .ant-menu-item{
+            a{
+                display: inline;
+            }
+        }
         .ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected{
             background: #1D233E;
+            a{
+                color: inherit;
+            }
         }
         .ant-menu-dark .ant-menu-item-selected{
             color:#4a8df1 ;

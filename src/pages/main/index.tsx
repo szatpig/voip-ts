@@ -20,27 +20,21 @@ class MainContainer extends Component<Props, State> {
     componentDidMount() {
     }
 
-    componentDidUpdate() {
-    }
-
-    componentWillUnmount() {
-    }
-
     render() {
         const { collapsed } = this.props.title;
-        console.log(collapsed);
+        console.log(collapsed,this.props);
         return (
             <Layout className="main-container">
                 <Sider width={180}
                        collapsed={ collapsed } >
-                    <MenuLayout collapsed = { collapsed } />
+                    <MenuLayout collapsed = { collapsed } selectedMenu={ this.props.location } />
                 </Sider>
                 <Layout>
                     <Header className='header-container'>
                         <HeadLayout />
                     </Header>
                     <Content className='content-container'>
-                        <ContentLayout />
+                        <ContentLayout {...this.props.match } />
                     </Content>
                 </Layout>
             </Layout>
@@ -49,7 +43,9 @@ class MainContainer extends Component<Props, State> {
 }
 
 interface Props {
-    title:any
+    title:any,
+    match:any,
+    location:any
 }
 interface State {}
 

@@ -12,7 +12,7 @@ import Main from './main'
         return (
             <Switch>
                 <Route path='/login' component={ Login } />
-                <Route path='/' component={ Main } />
+                <Route path='/home' component={ Main } />
             </Switch>
         )
     }

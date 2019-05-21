@@ -6,11 +6,12 @@ import routes from './../../../router'
 
 class ContentLayout extends Component<Props, State> {
     render() {
+        const  { url } =this.props;
         return (
-            <div>
+            <div className="wrapper-container">
                 {
                     routes.map((item,i) =>
-                        <Route key={i} path={ item.path } component={ item.component } exact />
+                        <Route key={i} path ={ url + item.path } component={ item.component } exact />
                     )
                 }
             </div>
@@ -18,7 +19,9 @@ class ContentLayout extends Component<Props, State> {
     }
 }
 
-interface Props {}
+interface Props {
+    url:string
+}
 interface State {}
 
 export default ContentLayout
