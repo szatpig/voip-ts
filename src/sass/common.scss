@@ -1,3 +1,15 @@
 #root{
     height: 100%;
 }
+
+
+.search-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    .left-wrap{
+        .ant-input{
+            width: 200px;
+        }
+    }
+}
